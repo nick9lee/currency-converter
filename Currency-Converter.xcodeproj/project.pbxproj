@@ -15,6 +15,7 @@
 		7A06C51D2516A1420092026B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A06C51B2516A1420092026B /* LaunchScreen.storyboard */; };
 		7A06C5282516A1430092026B /* Currency_ConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A06C5272516A1430092026B /* Currency_ConverterTests.swift */; };
 		7A06C5332516A1430092026B /* Currency_ConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A06C5322516A1430092026B /* Currency_ConverterUITests.swift */; };
+		7A163DF8251EE3CB0057B58E /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A163DF7251EE3CB0057B58E /* Converter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		7A06C52E2516A1430092026B /* Currency-ConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Currency-ConverterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A06C5322516A1430092026B /* Currency_ConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency_ConverterUITests.swift; sourceTree = "<group>"; };
 		7A06C5342516A1430092026B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A163DF7251EE3CB0057B58E /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				7A06C5102516A1400092026B /* AppDelegate.swift */,
 				7A06C5122516A1400092026B /* SceneDelegate.swift */,
+				7A163DF7251EE3CB0057B58E /* Converter.swift */,
 				7A06C5142516A1400092026B /* ViewController.swift */,
 				7A06C5162516A1400092026B /* Main.storyboard */,
 				7A06C5192516A1420092026B /* Assets.xcassets */,
@@ -260,6 +263,7 @@
 			files = (
 				7A06C5152516A1400092026B /* ViewController.swift in Sources */,
 				7A06C5112516A1400092026B /* AppDelegate.swift in Sources */,
+				7A163DF8251EE3CB0057B58E /* Converter.swift in Sources */,
 				7A06C5132516A1400092026B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

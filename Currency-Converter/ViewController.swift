@@ -13,9 +13,17 @@ class ViewController: UIViewController{
     // convert to euro, then to desired currency
     // math ex: CAD -> EUR -> USD is CAD/rate = EUR -> EUR*rate = USD
     
+    let converter = Converter();
     
     @IBOutlet weak var firstCurrency: UITextField!
     @IBOutlet weak var secondCurrency: UITextField!
+    @IBOutlet weak var amount: UITextField!
+    @IBOutlet weak var result: UITextField!
+    
+    @IBAction func convertButton(_ sender: UIButton) {
+        
+        
+    }
     
     var pickerView1 = UIPickerView()
     var pickerView2 = UIPickerView()
