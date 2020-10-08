@@ -21,7 +21,25 @@ class ViewController: UIViewController{
     @IBOutlet weak var result: UITextField!
     
     @IBAction func convertButton(_ sender: UIButton) {
+        guard let firstCurrencyType = firstCurrency.text else{
+            return;
+        }
         
+        guard let secondCurrencyType = secondCurrency.text else {
+            return;
+        }
+        
+        guard let numberEntered = amount.text else{
+            return;
+        }
+        
+        let convertThisNumber = Int(numberEntered) ?? 0
+        
+        let afterConversion = converter.convertCurrency(firstCurrency: firstCurrencyType, secondCurrency: secondCurrencyType, amount: convertThisNumber)
+        
+        let text = String(afterConversion)
+        
+        result.text = text
         
     }
     
