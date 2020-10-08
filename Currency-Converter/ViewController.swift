@@ -13,12 +13,26 @@ class ViewController: UIViewController{
     // convert to euro, then to desired currency
     // math ex: CAD -> EUR -> USD is CAD/rate = EUR -> EUR*rate = USD
     
+    var toBeConverted = 1.0
+    var firstToEurRate = 1.0{
+        didSet{
+            toBeConverted /= firstToEurRate
+        }
+    }
+    var eurToSecond = 1.0{
+        didSet{
+            toBeConverted *= eurToSecond
+            result.text = String(round(100*toBeConverted)/100)
+        }
+    }
+    
     let converter = Converter();
     
     @IBOutlet weak var firstCurrency: UITextField!
     @IBOutlet weak var secondCurrency: UITextField!
     @IBOutlet weak var amount: UITextField!
-    @IBOutlet weak var result: UITextField!
+    @IBOutlet weak var result: UILabel!
+    
     
     @IBAction func convertButton(_ sender: UIButton) {
         guard let firstCurrencyType = firstCurrency.text else{
@@ -33,15 +47,14 @@ class ViewController: UIViewController{
             return;
         }
         
-        let convertThisNumber = Int(numberEntered) ?? 0
+        let convertThisNumber = Double(numberEntered) ?? 0.00
+        toBeConverted = convertThisNumber
         
-        let afterConversion = converter.convertCurrency(firstCurrency: firstCurrencyType, secondCurrency: secondCurrencyType, amount: convertThisNumber)
+        converter.getRates(firstCurrency: firstCurrencyType, secondCurrency: secondCurrencyType, theViewController: self)
         
-        let text = String(afterConversion)
-        
-        result.text = text
         
     }
+    
     
     var pickerView1 = UIPickerView()
     var pickerView2 = UIPickerView()
@@ -64,6 +77,13 @@ class ViewController: UIViewController{
         pickerView1.tag = 1
         pickerView2.tag = 2
         
+    }
+    
+    public func somethingWrong(error: Error){
+        let alert = UIAlertController(title: "error", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(okButton)
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
@@ -92,3 +112,5 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
 }
+
+
