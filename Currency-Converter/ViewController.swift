@@ -32,6 +32,7 @@ class ViewController: UIViewController{
     @IBOutlet weak var secondCurrency: UITextField!
     @IBOutlet weak var amount: UITextField!
     @IBOutlet weak var result: UILabel!
+    @IBOutlet weak var CovertButton: UIButton!
     
     
     @IBAction func convertButton(_ sender: UIButton) {
@@ -67,6 +68,8 @@ class ViewController: UIViewController{
         
         firstCurrency.inputView = pickerView1
         secondCurrency.inputView = pickerView2
+        
+        CovertButton.layer.cornerRadius = CovertButton.frame.size.height/2
         
         pickerView1.delegate = self
         pickerView1.dataSource = self
